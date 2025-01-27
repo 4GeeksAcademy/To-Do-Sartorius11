@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import style from "../../styles/index.css";
+
 
 <FontAwesomeIcon icon={faCircleCheck} />;
 
@@ -32,11 +32,13 @@ export const ToDoList = () => {
                 <form>
                     <label htmlFor="exampleDataList" className="form-label">
 
+
                         <FontAwesomeIcon
                             icon={faCircleCheck}
                             size="3x"
                             style={{ color: "green" }}
                         />
+
                     </label>
 
                     <input
@@ -53,15 +55,21 @@ export const ToDoList = () => {
 
                     <ul className="list-group mt-3">
                         {listTodo.length > 0 ? (listTodo.map((element, index) => (
-                            <li key={index} className="list-group-item" >
+                            <li key={index} className="list-group-item d-flex justify-content-between hidden-icon" >
                                 {element}
-                                <button className="btn btn-close bg-danger m-1 float-end" type="button" onClick={() => handleDelete(index)}></button>
+                                <span>
+                                    <button className="btn btn-close bg-danger m-1 float-end" type="button" onClick={() => handleDelete(index)}></button>
+                                </span>
+
                             </li>
                         ))) : (
                             <li className="list-group-item">No hay tareas</li>
 
                         )}
-                        {listTodo.length} Tareas
+                        <div className="text-end ">
+                            {listTodo.length} Tareas
+                        </div>
+
                     </ul>
                 </form >
             </div>
