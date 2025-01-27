@@ -1,4 +1,6 @@
-
+.btn-close :hover{
+    display: none;
+}
 /* 
 
     You can write your own styles here...
